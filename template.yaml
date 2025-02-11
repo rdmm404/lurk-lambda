@@ -1,0 +1,21 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Lambda function for running Lurk every minute
+
+Resources:
+  LurkLambda:
+    Type: AWS::Serverless::Function
+    Properties:
+      CodeUri: function/
+      Handler: handler.handler
+      Runtime: python3.13
+      Timeout: 60
+      Environment:
+        Variables:
+          LURK_CONFIG: /var/task/lurk.yaml
+      # Events:
+      #   ScheduledEvent:
+      #     Type: Schedule
+      #     Properties:
+      #       Schedule: rate(1 minute)
