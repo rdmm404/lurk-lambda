@@ -1,6 +1,24 @@
 search:
   nvidia-4070-ti:
-    query: "nvidia 4070"
+    query: "nvidia 4070 ti"
+    filters:
+      min-price: 500
+      max-price: 1000
+      zip-code: M6K 1Y5
+      categories:
+        - "Computers & Tablets"
+        - "PC Components"
+  nvidia-5070-ti:
+    query: "nvidia 5070 ti"
+    filters:
+      min-price: 500
+      max-price: 1200
+      zip-code: M6K 1Y5
+      categories:
+        - "Computers & Tablets"
+        - "PC Components"
+  nvidia-5080:
+    query: "nvidia 5080"
     filters:
       min-price: 500
       max-price: 1500
