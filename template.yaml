@@ -11,6 +11,7 @@ Resources:
       Handler: handler.handler
       Runtime: python3.13
       Timeout: 60
+      MemorySize: 512
       Environment:
         Variables:
           LURK_CONFIG: /var/task/lurk.yaml
