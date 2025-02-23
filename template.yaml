@@ -21,11 +21,11 @@ Resources:
         -  SSMParameterReadPolicy:
             ParameterName: "lurk/*"
 
-      # Events:
-      #   ScheduledEvent:
-      #     Type: ScheduleV2
-      #     Properties:
-      #       Description: "Run lurk on a schedule"
-      #       ScheduleExpression: rate(10 minutes)
-      #       RetryPolicy:
-      #           MaximumRetryAttempts: 5
+      Events:
+        ScheduledEvent:
+          Type: ScheduleV2
+          Properties:
+            Description: "Run lurk on a schedule"
+            ScheduleExpression: rate(1 minutes)
+            RetryPolicy:
+                MaximumRetryAttempts: 0
