@@ -1,9 +1,9 @@
 search:
   nvidia-4070-ti:
-    query: "nvidia 4070 ti"
+    query: "nvidia 4070 ti super"
     filters:
       min-price: 500
-      max-price: 1000
+      max-price: 1100
       zip-code: M6K 1Y5
       categories:
         - "Computers & Tablets"
@@ -12,7 +12,7 @@ search:
     query: "nvidia 5070 ti"
     filters:
       min-price: 500
-      max-price: 1200
+      max-price: 1300
       zip-code: M6K 1Y5
       categories:
         - "Computers & Tablets"
