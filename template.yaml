@@ -1,7 +1,7 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Transform: AWS::Serverless-2016-10-31
 Description: >
-  Lambda function for running Lurk every minute
+  Lambda function for running Lurk on a schedule
 
 Resources:
   LurkLambda:
@@ -14,8 +14,17 @@ Resources:
       Environment:
         Variables:
           LURK_CONFIG: /var/task/lurk.yaml
+          LURK_TELEGRAM_TOKEN: "/lurk/telegram_token"
+          LURK_TELEGRAM_CHAT_ID: "/lurk/telegram_chat_id"
+      Policies:
+        -  SSMParameterReadPolicy:
+            ParameterName: "lurk/*"
+
       # Events:
       #   ScheduledEvent:
-      #     Type: Schedule
+      #     Type: ScheduleV2
       #     Properties:
-      #       Schedule: rate(1 minute)
+      #       Description: "Run lurk on a schedule"
+      #       ScheduleExpression: rate(10 minutes)
+      #       RetryPolicy:
+      #           MaximumRetryAttempts: 5
