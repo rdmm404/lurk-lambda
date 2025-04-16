@@ -1,31 +1,47 @@
 search:
-  nvidia-4070-ti:
-    query: "nvidia 4070 ti super"
-    filters:
-      min-price: 500
-      max-price: 1100
-      zip-code: M6K 1Y5
-      categories:
-        - "Computers & Tablets"
-        - "PC Components"
   nvidia-5070-ti:
     query: "nvidia 5070 ti"
     filters:
       min-price: 500
-      max-price: 1300
-      zip-code: M6K 1Y5
-      categories:
-        - "Computers & Tablets"
-        - "PC Components"
+      max-price: 1200
+      in-stock: true
   nvidia-5080:
     query: "nvidia 5080"
     filters:
       min-price: 500
-      max-price: 1500
-      zip-code: M6K 1Y5
-      categories:
-        - "Computers & Tablets"
-        - "PC Components"
+      max-price: 1400
+      in-stock: true
+
+checkers:
+  best-buy:
+    search:
+      nvidia-5070-ti:
+        filters:
+          zip-code: M6K 1Y5
+          categories:
+            - "Computers & Tablets"
+            - "PC Components"
+      nvidia-5080:
+        filters:
+          zip-code: M6K 1Y5
+          categories:
+            - "Computers & Tablets"
+            - "PC Components"
+
+  memory-express:
+    search:
+      nvidia-5070-ti:
+        filters:
+          categories:
+            - "VideoCards"
+          stores:
+            - "OnlineStore"
+      nvidia-5080:
+        filters:
+          categories:
+            - "VideoCards"
+          stores:
+            - "OnlineStore"
 
 client:
   headers:
